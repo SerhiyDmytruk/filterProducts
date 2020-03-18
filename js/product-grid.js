@@ -11,7 +11,18 @@ export function listGrid() {
         self.productArray = ko.observableArray();
         self.priceArray = ko.observableArray();
 
-        $.post("./products.json", function(request) {
+        fetch('./products.json',{
+            method: 'GET', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: "application/json"
+            },
+            mode: 'cors'
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((request) => {
 
             // get data for Product items
             var mappedDataCat = $.map(request , function(item){
@@ -30,6 +41,27 @@ export function listGrid() {
             self.productArray(mappedDataCat);
             self.priceArray(mappedDataPrice);
         });
+
+
+        // $.post("products.json", function(request) {
+        //
+        //     // get data for Product items
+        //     var mappedDataCat = $.map(request , function(item){
+        //         return new Product(item);
+        //     });
+        //
+        //     // get data for Price
+        //     var mappedDataPrice = $.map(request , function(item){
+        //         return item.price;
+        //     });
+        //
+        //     mappedDataPrice = mappedDataPrice.filter((item, index) => {
+        //         return mappedDataPrice.indexOf(item) === index;
+        //     });
+        //
+        //     self.productArray(mappedDataCat);
+        //     self.priceArray(mappedDataPrice);
+        // });
 
         // array for choosen price
         self.newArr = ko.observableArray([]);

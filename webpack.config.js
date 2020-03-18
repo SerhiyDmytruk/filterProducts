@@ -11,7 +11,7 @@ module.exports = {
         library: 'app'
     },
 
-    watch: true,
+    watch: false,
 
     resolve: {
         modules: ['node_modules'],

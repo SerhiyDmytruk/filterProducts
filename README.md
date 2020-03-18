@@ -4,3 +4,7 @@
 Also was used:
 - bootstrap lib styles;
 - file with product information - products.json;
+
+
+Instruction:
+- run command `npm run start`

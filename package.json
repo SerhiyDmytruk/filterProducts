@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/http-server/bin/http-server",
+    "start": "webpack && ./node_modules/http-server/bin/http-server"
   },
   "author": "Brice Wilson",
   "license": "ISC",
