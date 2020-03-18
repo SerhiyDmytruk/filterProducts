@@ -1,0 +1,69 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>test SPA</title>
+</head>
+<body id="body">
+
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand">SPA</span>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container mt-4" role="main" id="main">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="sticky-top fixed-top">
+                    <h4>Price filter</h4>
+
+                    <ul class="list-group" id="price-list"  data-bind="foreach: priceArray">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                                <input class="custom-control-input"
+                                       type="checkbox"
+                                       data-bind="attr: { id: 'price-' + $index(), name: 'price-' + $index()}, click: $root.filterPrice">
+                                <label class="custom-control-label" data-bind="attr: { for: 'price-' + $index()}, text: $data + ' $'"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+
+                <div class="row" data-bind="foreach: productArray">
+
+                    <section class="col-md-4 card-item" data-bind="attr: {'data-price': price}">
+                            <img class="card-img-top"
+                                 style="height: 225px; width: 100%; display: block;"
+                                 data-bind="attr: { alt: name, 'src': images }"
+                                 data-holder-rendered="true">
+
+                            <div class="card-body border mb-2">
+                                <p class="card-text text-capitalize font-weight-bold text-truncate" data-bind="text: name"></p>
+                                <p class="card-text text-lowercase text-muted" data-bind="text: sku"></p>
+                                <p class="card-text text-lowercase text-truncate" data-bind="text: short_description"></p>
+                                <p class="card-text font-weight-bold">
+                                    $ <span data-bind="text: price"></span>
+                                </p>
+                            </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- add script tags here -->
+
+    <script src="./dist/app.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "multimath",
+  "version": "1.0.0",
+  "description": "Simple math game for demonstrating modules.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/http-server/bin/http-server",
+  },
+  "author": "Brice Wilson",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-watch": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^2.35.4",
+    "http-server": "^0.12.1",
+    "jquery": "^3.4.1",
+    "knockout": "^3.5.1",
+    "knockout-else": "^1.0.12",
+    "knockout-es5": "^0.4.5",
+    "knockout-punches": "^0.5.1",
+    "watchify": "^0.1.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "requirejs": "^2.2.0",
+    "core-js": "^2.6.9"
+  }
+}
